@@ -6,11 +6,22 @@
   "scripts": {
     "test": "tape test.js"
   },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Balou9/lirm.git"
+},
   "keywords": [
     "regression",
     "linear",
     "model"
   ],
   "author": "Emmanuel Owosekun",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+  "url": "https://github.com/Balou9/lirm/issues"
+},
+"homepage": "https://github.com/Balou9/lirm#readme",
+  "devDependencies": {
+    "tape": "^4.9.1"
+  }
 }
