@@ -30,9 +30,9 @@ console.log(lirm(x, y, 1))
 
 ## API
 
-### `lirm(x, y, user_x)`
+### `lirm(x, y, predictor)`
 
-Enter independent and dependent variable to calculate regressions y-hat.  
+Enter independent x and dependent variable plus predictor to calculate response.  
 
 ***
 
