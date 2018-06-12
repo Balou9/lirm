@@ -26,14 +26,13 @@ function dotxyDist (xdis, ydis) {
   return sum(result)
 }
 
-function bZero (x,y) {
-  return mean(y) - bOne(x,y) * mean(x)
-}
-
 function bOne (x, y) {
   return dotxyDist(meanDist(x), meanDist(y)) / distSquared(meanDist(x))
 }
 
+function bZero (x,y) {
+  return mean(y) - bOne(x,y) * mean(x)
+}
 
 function lirm (x, y, predictor) {
     return bZero(x,y) + bOne(x,y) * predictor
