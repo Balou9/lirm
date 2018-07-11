@@ -1,21 +1,9 @@
-function sum (arr) {
-  var result = 0
-  for (var i = 0; i < arr.length; i++){
-    result += arr[i]
-  }
-  return result
-}
-
 function mean (arr) {
-  return sum(arr) / arr.length
+  return arr.reduce((acc, cur) => acc + cur, 0) / arr.length
 }
 
 function meanDist (arr) {
   return arr.map(i => i - mean(arr))
-}
-
-function distSquared (arr) {
-  return sum(arr.map(i => Math.pow(i,2)))
 }
 
 function dotxyDist (xdis, ydis) {
@@ -23,7 +11,11 @@ function dotxyDist (xdis, ydis) {
   for (var i = 0; i < xdis.length; i++){
     result[i] = (xdis[i] || 0) * (ydis[i] || 0)
   }
-  return sum(result)
+  return result.reduce((acc, cur) => acc + cur, 0)
+}
+
+function distSquared (arr) {
+  return arr.map(i => Math.pow(i,2)).reduce((acc, cur) => acc + cur, 0)
 }
 
 function bOne (x, y) {
@@ -34,12 +26,13 @@ function bZero (x,y) {
   return mean(y) - bOne(x,y) * mean(x)
 }
 
-function lirm (x, y, predictor) {
-    return bZero(x,y) + bOne(x,y) * predictor
+function lirm (x, y, predictor, callback) {
+    var res = Math.round((bZero(x,y) + bOne(x,y) * predictor) * 10) / 10
+    callback(null, res)
 }
 
 module.exports = {
   lirm,
   bOne,
-  bZero
+  bZero,
 }

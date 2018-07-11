@@ -16,21 +16,23 @@ tape('yMean functions', function (t){
 })
 
 tape('Linear regression function', function (t) {
+  reg.lirm(x, y, 1, function (err, data) {
+    t.ok(data, 'validation is true')
+  })
+  t.end()
+})
 
-  var oneRegLineDot = reg.lirm(x, y, 1)
-
-  t.ok(reg.lirm(x, y, 1), 'is true')
-  t.ok(reg.lirm(x, y, 1) === oneRegLineDot, 'validation is true')
-  t.ok(reg.lirm(x, y, 1), 'is a number')
+tape('Result is typeof number', function (t) {
+  reg.lirm(x, y, 1, function (err, data) {
+    t.ok(typeof data === 'number')
+  })
   t.end()
 })
 
 tape('Unequal array length is no problem', function (t) {
-
-  var unEqualLengthDot = reg.lirm(x, z, 1)
-
-  t.ok(reg.lirm(x, z, 1), 'is true')
-  t.ok(reg.lirm(x, z, 1) === unEqualLengthDot, 'is none')
+  reg.lirm(x, z, 1, function (err, data) {
+    t.ok(data)
+  })
   t.end()
 
 })
