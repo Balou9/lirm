@@ -1,6 +1,6 @@
 {
   "name": "lirm",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Calculating response based on predictor and respective independent and dependent variable using least square method",
   "main": "index.js",
   "scripts": {
