@@ -18,21 +18,15 @@ function distSquared (arr) {
   return arr.map(i => Math.pow(i,2)).reduce((acc, cur) => acc + cur, 0)
 }
 
-function bOne (x, y) {
+export function bOne (x, y) {
   return dotxyDist(meanDist(x), meanDist(y)) / distSquared(meanDist(x))
 }
 
-function bZero (x,y) {
+export function bZero (x,y) {
   return mean(y) - bOne(x,y) * mean(x)
 }
 
-function lirm (x, y, predictor, callback) {
-    var res = Math.round((bZero(x,y) + bOne(x,y) * predictor) * 10) / 10
-    callback(null, res)
-}
-
-module.exports = {
-  lirm,
-  bOne,
-  bZero,
+export function lirm (x, y, predictor, callback) {
+  var res = Math.round((bZero(x,y) + bOne(x,y) * predictor) * 10) / 10
+  callback(null, res)
 }
