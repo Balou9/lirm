@@ -1,5 +1,5 @@
 import sampleData from "./lib/sampledata.ts"
-import lirm from "./mod.ts"
+import { lirm } from "./mod.ts"
 
 function calculateRegressionLine (x : number[], y: number[], predictorLength: number) : number[] {
   let result : number[] = []

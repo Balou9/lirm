@@ -15,7 +15,7 @@ export function bZero (x : number[], y: number[]) : number {
   return mean(y) - mean(x) * bOne(x, y)
 }
 
-export default function lirm (x : number[], y : number[], predictor : number) : number {
+export function lirm (x : number[], y : number[], predictor : number) : number {
   var res = Math.round((bZero(x, y) + bOne(x, y) * predictor) * 10) / 10
   return res
 }
